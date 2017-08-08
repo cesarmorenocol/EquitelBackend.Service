@@ -1,4 +1,5 @@
 ﻿using Comun.Servicios;
+using Comun.Servicios.Entidades;
 using Comun.Servicios.Transversales;
 using System;
 using System.Collections.Generic;
@@ -57,6 +58,21 @@ namespace Comun.Servicios.Datos
             else
                 return false;
         }   
+
+        /// <summary>
+        /// Permite la creaión de posts
+        /// </summary>
+        public int CrearPost(Post post)
+        {
+            var parametros =
+                new SqlParameter[]
+                    { new SqlParameter() { ParameterName = "@Opcion", Value = Opcion.Actualizar, DbType = DbType.Int32 },
+                      new SqlParameter() { ParameterName = "@Descripcion", Value = post.Descripcion, DbType = DbType.Int32 },
+                      new SqlParameter() { ParameterName = "@EstadoId", Value = EstadoPost.Creado, DbType = DbType.Int32 } };
+            // Ejecutar la actualización del post:
+            int resultado = EjecutarNoQuery(Constantes.spAdministrarPosts, parametros);
+            return resultado;
+        }
 
         #endregion
 

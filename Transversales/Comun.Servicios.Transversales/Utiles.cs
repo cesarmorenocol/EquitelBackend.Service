@@ -67,5 +67,32 @@ namespace Comun.Servicios.Transversales
             return oraciones.Count(c => c.Split(' ').Count() > 15);
         }
 
+
+        /// <summary>
+        /// Permite la generación de los post para enviar:
+        /// </summary>
+        public static string GenerarPost()
+        {
+            string post = string.Empty;
+            for (int i = 150; i < 600; i = i + 150)
+            {
+                post += RandomString(i);
+                post += post + ".\n\r";
+            }
+            return post;
+        }
+
+        /// <summary>
+        /// Toomado de internet. Fuente: StackOverflow.
+        /// </summary>
+        static string RandomString(int Size)
+        {
+            string input = "abcdefghijklmnopqrstuvwxyz0123456789 .,;";
+            Random random = new Random();
+            var chars = Enumerable.Range(0, Size)
+                                   .Select(x => input[random.Next(0, input.Length)]);
+            return new string(chars.ToArray());
+        }
+
     }
 }
