@@ -67,7 +67,7 @@ namespace Comun.Servicios.Datos
             var parametros =
                 new SqlParameter[]
                     { new SqlParameter() { ParameterName = "@Opcion", Value = Opcion.Crear, DbType = DbType.Int32 },
-                      new SqlParameter() { ParameterName = "@Descripcion", Value = post.Descripcion, DbType = DbType.Int32 },
+                      new SqlParameter() { ParameterName = "@Descripcion", Value = post.Descripcion, DbType = DbType.String },
                       new SqlParameter() { ParameterName = "@EstadoId", Value = EstadoPost.Creado, DbType = DbType.Int32 } };
             // Ejecutar la actualización del post:
             int resultado = EjecutarNoQuery(Constantes.spAdministrarPosts, parametros);
