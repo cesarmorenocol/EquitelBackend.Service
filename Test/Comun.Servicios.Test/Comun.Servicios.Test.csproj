@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CB635636-EDBF-47A6-AD50-206BC3F27A3C}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comun.Servicios.Test</RootNamespace>
+    <AssemblyName>Comun.Servicios.Test</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Analizador.Servicio.Negocio\Analizador.Servicio.Negocio.csproj">
+      <Project>{B1CE24F3-12DB-4BB1-852C-8CB951C4B024}</Project>
+      <Name>Analizador.Servicio.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Comun.Servicios.Datos\Comun.Servicios.Datos.csproj">
+      <Project>{a1b808cc-fc42-4e4a-8e32-ae56501f463f}</Project>
+      <Name>Comun.Servicios.Datos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Negocio\Posts.Servicio.Negocio\Posts.Servicio.Negocio.csproj">
+      <Project>{2e25d565-b058-4c10-b1e8-f9c0cf749e59}</Project>
+      <Name>Posts.Servicio.Negocio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Servicios\Analizador.Service\Analizador.Servicios.Servicio.csproj">
+      <Project>{47c79b99-e3a7-4933-aec8-fa8eb5c4335c}</Project>
+      <Name>Analizador.Servicios.Servicio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Transversales\Comun.Servicios.Entidades\Comun.Servicios.Entidades.csproj">
+      <Project>{354ce875-8cb8-46f1-83cd-821d87ee80a0}</Project>
+      <Name>Comun.Servicios.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Transversales\Comun.Servicios.Transversales\Comun.Servicios.Transversales.csproj">
+      <Project>{a8e94a25-c288-4554-85c3-365668461369}</Project>
+      <Name>Comun.Servicios.Transversales</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
